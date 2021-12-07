@@ -1,0 +1,135 @@
+@import url();
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #222327;
+}
+.navigation
+{
+   position: relative;
+   width: 400px;
+   height: 60px;
+   background-color: #fff;
+   border-radius: 10px;
+   display:flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 1em;
+}
+.navigation ul{
+    display: flex;
+    width:350px;
+}
+.navigation ul li{
+    list-style: none;
+    position: relative;
+    width:70px;
+    height: 50px;
+    z-index: 2;
+
+}
+.navigation ul a
+{
+    position: relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+
+}
+.navigation ul li a .icon{
+    font-size: 27px;
+}
+
+
+.navigation ul li.active a .icon{
+    position: relative;
+    display: block;
+    line-height:70px;
+    font-size:27px;
+    transition: 0.5s;
+    color:#222327;
+}
+.navigation ul li.active a .icon
+{
+    transform:translateY(-30px);
+    color:#2196f3;
+
+}
+.navigation ul li a .text
+{
+    position:absolute;
+    background: #2196f3;
+    color: #fff;
+    padding: 2px 7px;
+    border-radius: 12px;
+    font-weight: 400;
+    font-size: 0.75;
+    letter-spacing:0.05em;
+    transition: 0.5ms;
+    opacity: 0;
+    transform: translateY(15px);
+    
+}
+.navigation ul li.active a .text
+{
+    transform: translateY(-4px);
+    opacity: 1;
+}
+
+.Indicator
+{
+    position: absolute;
+    top: -50%;
+    width: 70px;
+    height: 70px;
+    background: #fff;
+    border-radius: 50%;
+    z-index: 1;
+    transition: 0.5s;
+
+}
+
+.Indicator::before{
+    content:'';
+    position: absolute;
+    top:5px;
+    width:30px;
+    height:30px;
+    background-color:transparent;
+    border-radius: 50%;
+    box-shadow:15px 18px #fff ;
+}
+.navigation ul li:nth-child(1).active ~ .Indicator
+{
+    transform: translateX(calc(70px *0));
+}
+.navigation ul li:nth-child(2).active ~ .Indicator
+{
+    transform: translateX(calc(70px *1));
+}
+.navigation ul li:nth-child(3).active ~ .Indicator
+{
+    transform: translateX(calc(70px *2));
+}
+.navigation ul li:nth-child(4).active ~ .Indicator
+{
+    transform: translateX(calc(70px *3));
+}
+.navigation ul li:nth-child(5).active ~ .Indicator
+{
+    transform: translateX(calc(70px *4));
+}
